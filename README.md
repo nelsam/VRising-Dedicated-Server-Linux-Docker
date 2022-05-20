@@ -8,9 +8,9 @@ Run a VRising Dedicated Server on Linux via Docker
 
 Now this will probably take a few minutes as it will;
 
-...Build the base docker image (10-20 mins)
-...Download the VRising Dedicated Server from Steam (~1.6GB)
-...Run the Dedicated Server for the first time (usually 5-10 minutes)
+..* Build the base docker image (10-20 mins)
+..* Download the VRising Dedicated Server from Steam (~1.6GB)
+..* Run the Dedicated Server for the first time (usually 5-10 minutes)
 
 I would recommend shutting it down after it starts (You won't be able to connect yet anyway), and edit these two files;
 
