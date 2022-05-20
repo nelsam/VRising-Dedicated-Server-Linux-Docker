@@ -28,10 +28,11 @@ I would recommend shutting it down after it starts (You won't be able to connect
 ```
 ./VRising-Dedicated-Server-Linux-Docker/data/VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json
 ```
-    At least change the Name, Port and QueryPort to match our Docker Ports (So outside can connect), and Port forward them.
-        "Name": "YOURNAME V Rising Server [Linux Dedicated]",
-        "Port": 27015,
-        "QueryPort": 27016,
+At least change the Name, Port and QueryPort to match our Docker Ports (So outside can connect), and Port forward them.
+
+    "Name": "YOURNAME V Rising Server [Linux Dedicated]",
+    "Port": 27015,
+    "QueryPort": 27016,
         
  And for the actual game settings, edit;
  ```
