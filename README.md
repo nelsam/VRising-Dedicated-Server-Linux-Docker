@@ -46,3 +46,13 @@ At least change the Name, Port and QueryPort to match our Docker Ports (So outsi
  ```
  
  And you're good!
+ 
+ ---
+ 
+ Credits;
+ 
+ This Server uses the following Images;
+ 
+ maloneweb/docker-wine-base:latest
+ honestventures/steamcmd-linux-wine:latest
+ 
