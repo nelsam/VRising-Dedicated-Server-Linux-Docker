@@ -26,6 +26,10 @@ Now this will probably take a few minutes as it will;
 
 ## I would recommend shutting it down after it starts (You won't be able to connect yet anyway)!
 
+```
+sudo docker stop vRisingServer
+```
+
 Edit this file for Server Settings:
 ```
 ./VRising-Dedicated-Server-Linux-Docker/data/save-data/ServerHostSettings.json
