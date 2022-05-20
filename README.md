@@ -28,7 +28,7 @@ Now this will probably take a few minutes as it will;
 
 Edit this file for Server Settings:
 ```
-./VRising-Dedicated-Server-Linux-Docker/data/VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json
+./VRising-Dedicated-Server-Linux-Docker/data/save-data/ServerHostSettings.json
 ```
 At least change the Name, Port and QueryPort to match our Docker Ports (So outside can connect), and Port forward them.
 
@@ -40,7 +40,7 @@ At least change the Name, Port and QueryPort to match our Docker Ports (So outsi
 
  Edit this file for the actual Game Settings:
  ```
- ./VRising-Dedicated-Server-Linux-Docker/data/VRisingServer_Data/StreamingAssets/Settings/ServerGameSettings.json
+ ./VRising-Dedicated-Server-Linux-Docker/data/save-data/ServerGameSettings.json
  ```
 
 
