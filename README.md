@@ -47,10 +47,10 @@ At least change the Name, Port and QueryPort to match our Docker Ports (So outsi
  Once you're happy, simply run;
  
  ```
- ./runServer.sh
+ ./VRising-Dedicated-Server-Linux-Docker/runServer.sh
  ```
  
- And you're good!
+ And get to Vampirising! (The script will always make sure the server is up to date before running it!)
  
  ---
  
