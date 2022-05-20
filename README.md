@@ -1,10 +1,22 @@
 # VRising Dedicated Server Linux Docker
 Run a VRising Dedicated Server on Linux via Docker
 
-1.  git clone https://github.com/smb1982/VRising-Dedicated-Server-Linux-Docker.git
-2.  cd VRising-Dedicated-Server-Linux-Docker/
-3.  chmod +x ./* -R
-4.  ./runServer.sh
+1.  
+```
+git clone https://github.com/smb1982/VRising-Dedicated-Server-Linux-Docker.git
+```
+2.  
+```
+cd VRising-Dedicated-Server-Linux-Docker/
+```
+3.
+```
+chmod +x ./* -R
+```
+4. 
+```
+./runServer.sh
+```
 
 Now this will probably take a few minutes as it will;
 
