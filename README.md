@@ -24,7 +24,9 @@ Now this will probably take a few minutes as it will;
   * Download the VRising Dedicated Server from Steam (~1.6GB)
   * Run the Dedicated Server for the first time (usually 5-10 minutes)
 
-I would recommend shutting it down after it starts (You won't be able to connect yet anyway), and edit these two files;
+## I would recommend shutting it down after it starts (You won't be able to connect yet anyway)!
+
+Edit this file for Server Settings:
 ```
 ./VRising-Dedicated-Server-Linux-Docker/data/VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json
 ```
@@ -33,11 +35,14 @@ At least change the Name, Port and QueryPort to match our Docker Ports (So outsi
     "Name": "YOURNAME V Rising Server [Linux Dedicated]",
     "Port": 27015,
     "QueryPort": 27016,
-        
- And for the actual game settings, edit;
+
+
+
+ Edit this file for the actual Game Settings:
  ```
  ./VRising-Dedicated-Server-Linux-Docker/data/VRisingServer_Data/StreamingAssets/Settings/ServerGameSettings.json
  ```
+
 
  Once you're happy, simply run;
  
