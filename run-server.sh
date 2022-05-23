@@ -33,19 +33,8 @@ docker run --interactive --tty --rm \
     +app_update ${appID} validate \
     +quit
 
-pushd data/save-data
-
-if [ ! -e ServerHostSettings.json ]
-then
-    ln -s ../VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json .
-fi
-
-if [ ! -e ServerGameSettings.json ]
-then
-    ln -s ../VRisingServer_Data/StreamingAssets/Settings/ServerGameSettings.json .
-fi
-
-popd
+cp data/VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json data/save-data/ServerHostSettings.json
+cp data/VRisingServer_Data/StreamingAssets/Settings/ServerGameSettings.json data/save-data/ServerGameSettings.json
 
 docker run --interactive --tty --detach --rm \
     --name "VRisingServer" \
