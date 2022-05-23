@@ -15,25 +15,30 @@ COPY scripts/waitforprocess.sh /usr/local/bin/waitforprocess.sh
 COPY scripts/x11-start.sh /usr/local/bin/x11-start.sh
 
 # Build Dependencies
+
+# Required for winetricks
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    # Required for winetricks
     cabextract \
     p7zip \
     unzip \
     wget \
     xvfb \
-    zenity \
-    # Winetricks and Permissions
-    && wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/local/bin/winetricks \
-    && chmod +x /usr/local/bin/winetricks \
-    && chmod +x /usr/local/bin/*.sh \
-    # Mono For Wine
-    && mkdir /tmp/wine-mono \
-    && wget https://dl.winehq.org/wine/wine-mono/${WINE_MONO_VERSION}/wine-mono-${WINE_MONO_VERSION}.msi -O /tmp/wine-mono/wine-mono-${WINE_MONO_VERSION} \ 
-    # Install .NET Framework 2.0 and 4.6.2
-    && wine wineboot --init \
-    && waitforprocess.sh wineserver \
-    && x11-start.sh \
+    zenity
+
+# Winetricks and Permissions
+RUN wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks -O /usr/local/bin/winetricks \
+    && chmod +x /usr/local/bin/winetricks
+
+# Mono For Wine
+RUN mkdir /tmp/wine-mono \
+    && wget https://dl.winehq.org/wine/wine-mono/${WINE_MONO_VERSION}/wine-mono-${WINE_MONO_VERSION}.msi -O /tmp/wine-mono/wine-mono-${WINE_MONO_VERSION}
+
+# Initialize wine
+RUN wine wineboot --init \
+    && waitforprocess.sh wineserver
+
+# Install .NET Framework 2.0 and 4.6.2
+RUN x11-start.sh \
     && winetricks --unattended --force vcrun2019 dotnet20 dotnet40 dotnet45 msxml6 dotnet_verifier
 
 # Copy Over Wine Prefix
@@ -47,6 +52,7 @@ RUN mkdir -p /usr/share/wine/mono
 COPY --from=0 /root/.wine /root/.wine
 COPY --from=0 /tmp/wine-mono /usr/share/wine/mono
 
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # Required for winetricks
     cabextract \
@@ -55,4 +61,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
     xvfb
 
-
+COPY scripts/vrising-server.sh /usr/local/bin/vrising-server.sh
+ENTRYPOINT /usr/local/bin/vrising-server.sh
