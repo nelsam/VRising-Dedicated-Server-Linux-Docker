@@ -24,7 +24,7 @@ then
     fi
 fi
 
-docker run --interactive --tty --rm \
+docker run --interactive --tty --rm --user $(id -u):$(id -g) \
     --name "VRisingUpdater" \
     --volume $PWD/data:/data \
     honestventures/steamcmd-linux-wine:latest \
@@ -36,7 +36,7 @@ docker run --interactive --tty --rm \
 cp data/VRisingServer_Data/StreamingAssets/Settings/ServerHostSettings.json data/save-data/ServerHostSettings.json
 cp data/VRisingServer_Data/StreamingAssets/Settings/ServerGameSettings.json data/save-data/ServerGameSettings.json
 
-docker run --interactive --tty --detach --rm \
+docker run --interactive --tty --detach --rm --user $(id -u):$(id -g) \
     --name "VRisingServer" \
     --volume $PWD/data:/data \
     --publish ${rconPort}:27015 \
